@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alan Varghese</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- CINEMATIC INTRO -->
+<div class="intro">
+  <h1>ALAN VARGHESE</h1>
+  <p>Wildlife • Photography • Storytelling</p>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="photos/me.jpeg" class="profile"/>
+    <h1>Alan Varghese</h1>
+    <p>Capturing silence inside the wild.</p>
+  </div>
+
+</header>
+
+<!-- STORY -->
+<section class="story">
+  <h2>The Journey</h2>
+  <p>
+    I started with curiosity. Now I capture wildlife moments that feel alive, raw, and untold.
+  </p>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <h2>Photographer Timeline</h2>
+
+  <div class="timeline-grid">
+    <div>📸 First wildlife shot</div>
+    <div>🏫 School recognition</div>
+    <div>🎯 First photography project</div>
+    <div>🌿 Building wildlife identity</div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <h2>Achievements</h2>
+
+  <div class="award-grid">
+    <div>🏆 School Photography Recognition</div>
+    <div>📷 Official school media photography</div>
+    <div>🌍 Wildlife portfolio development</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>Wildlife Portfolio</h2>
+
+  <div class="grid">
+    <img src="photos/tiger.jpg" onclick="openImg(this.src)">
+    <img src="photos/bird.jpeg" onclick="openImg(this.src)">
+    <img src="photos/elephant.jpg" onclick="openImg(this.src)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img"/>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Alan Varghese • Crafted in the wild
+</footer>
+
+<script>
+function openImg(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeImg(){
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
