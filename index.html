@@ -11,63 +11,77 @@
 
 <!-- CINEMATIC INTRO -->
 <div class="intro">
-  <h1>ALAN VARGHESE</h1>
-  <p>Wildlife • Photography • Storytelling</p>
+  <div class="intro-title">
+    <h1>ALAN VARGHESE</h1>
+    <p>Wildlife • Photography • Silence</p>
+  </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (YOUR BEST SHOT = HERO IDENTITY) -->
 <header class="hero">
 
   <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
 
   <div class="hero-content">
     <img src="photos/me.jpeg" class="profile"/>
+
     <h1>Alan Varghese</h1>
-    <p>Capturing silence inside the wild.</p>
+    <p class="subtitle">
+      I don’t capture animals — I capture moments the wild never repeats.
+    </p>
+
+    <div class="meta">
+      <span>📍 Kerala</span>
+      <span>📸 Wildlife Photographer</span>
+      <span>🌿 Nature Storyteller</span>
+    </div>
   </div>
 
 </header>
 
 <!-- STORY -->
-<section class="story">
+<section class="section reveal">
   <h2>The Journey</h2>
   <p>
-    I started with curiosity and a camera. Today, I capture wildlife moments that feel alive, raw, and untold.
+    Every photograph begins with silence. I wait — not to take a picture,
+    but to witness a moment nature allows only once.
   </p>
 </section>
 
 <!-- TIMELINE -->
-<section class="timeline">
+<section class="section reveal dark">
   <h2>Photographer Timeline</h2>
 
-  <div class="timeline-grid">
-    <div>📸 First wildlife shot</div>
-    <div>🏫 School recognition</div>
-    <div>🎯 First photography project</div>
-    <div>🌿 Building wildlife identity</div>
+  <div class="cards">
+    <div>📸 First wildlife frame captured</div>
+    <div>🏫 Recognized for photography at school</div>
+    <div>🎯 Selected for official media work</div>
+    <div>🌍 Building a wildlife identity</div>
   </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
-<section class="awards">
+<section class="section reveal">
   <h2>Achievements</h2>
 
-  <div class="award-grid">
+  <div class="cards glow">
     <div>🏆 School Photography Recognition</div>
-    <div>📷 Selected for official school media work</div>
-    <div>🌍 Wildlife photography portfolio growth</div>
+    <div>📷 Official school media photographer</div>
+    <div>🌿 Wildlife portfolio development</div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery">
-  <h2>Wildlife Portfolio</h2>
+<section class="section reveal">
+  <h2>Featured Wildlife Frames</h2>
 
-  <div class="grid">
+  <div class="gallery">
+
     <img src="photos/tiger.jpg" onclick="openImg(this.src)">
     <img src="photos/bird.jpeg" onclick="openImg(this.src)">
     <img src="photos/elephant.jpg" onclick="openImg(this.src)">
+
   </div>
 </section>
 
@@ -78,7 +92,7 @@
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Alan Varghese • Crafted in the wild
+  Crafted in silence of nature • © 2026 Alan Varghese
 </footer>
 
 <script>
@@ -90,6 +104,17 @@ function openImg(src){
 function closeImg(){
   document.getElementById("lightbox").style.display = "none";
 }
+
+/* scroll reveal */
+const items = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  items.forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 80){
+      el.classList.add("active");
+    }
+  });
+});
 </script>
 
 </body>
