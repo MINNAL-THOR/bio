@@ -11,76 +11,96 @@
 
 <!-- CINEMATIC INTRO -->
 <div class="intro">
-  <div class="intro-title">
-    <h1>ALAN VARGHESE</h1>
-    <p>Wildlife • Photography • Silence</p>
-  </div>
+  <h1>ALAN VARGHESE</h1>
+  <p>Wildlife • Photography • Storytelling</p>
 </div>
 
-<!-- HERO (YOUR BEST SHOT = HERO IDENTITY) -->
+<!-- HERO -->
 <header class="hero">
-
   <div class="hero-bg"></div>
   <div class="hero-vignette"></div>
 
   <div class="hero-content">
-    <img src="photos/me.jpeg" class="profile"/>
 
-    <h1>Alan Varghese</h1>
+    <!-- MODERN PHOTO FRAME -->
+    <div class="profile-card">
+      <img src="photos/me.jpeg"/>
+      <div class="profile-info">
+        <h2>Alan Varghese</h2>
+        <p>Wildlife Photographer</p>
+      </div>
+    </div>
+
     <p class="subtitle">
-      I don’t capture animals — I capture moments the wild never repeats.
+      A young wildlife photographer from Kerala who captures rare moments of nature with patience and emotion.
     </p>
 
-    <div class="meta">
-      <span>📍 Kerala</span>
-      <span>📸 Wildlife Photographer</span>
-      <span>🌿 Nature Storyteller</span>
-    </div>
   </div>
-
 </header>
 
+<!-- FEATURED MASTERPIECE (IMPORTANT FIX) -->
+<section class="feature">
+  <h2>Featured Masterpiece</h2>
+
+  <div class="masterpiece" onclick="openImg('photos/hero.jpeg')">
+    <img src="photos/hero.jpeg"/>
+    <div class="cap">
+      “A frozen moment where silence meets the wild.”
+    </div>
+  </div>
+</section>
+
 <!-- STORY -->
-<section class="section reveal">
+<section class="section">
   <h2>The Journey</h2>
   <p>
-    Every photograph begins with silence. I wait — not to take a picture,
-    but to witness a moment nature allows only once.
+    Photography for Alan began as curiosity. Over time, it evolved into patience, observation,
+    and understanding the rhythm of wildlife. Each frame reflects his connection with nature rather than just the subject.
   </p>
 </section>
 
-<!-- TIMELINE -->
-<section class="section reveal dark">
+<!-- TIMELINE (CLICKABLE DETAIL) -->
+<section class="section">
   <h2>Photographer Timeline</h2>
 
-  <div class="cards">
-    <div>📸 First wildlife frame captured</div>
-    <div>🏫 Recognized for photography at school</div>
-    <div>🎯 Selected for official media work</div>
-    <div>🌍 Building a wildlife identity</div>
+  <button class="expand" onclick="toggle('t1')">View Journey Details</button>
+
+  <div id="t1" class="hidden">
+    Alan started photography with simple curiosity about birds and forest life. Over time, he learned patience, timing, and storytelling. His school recognized his ability, giving him opportunities to document official events. Today, he continues building a personal wildlife archive that reflects emotion, silence, and nature’s raw beauty.
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section class="section reveal">
+<!-- ACHIEVEMENTS (CLICKABLE DETAIL) -->
+<section class="section">
   <h2>Achievements</h2>
 
-  <div class="cards glow">
-    <div>🏆 School Photography Recognition</div>
-    <div>📷 Official school media photographer</div>
-    <div>🌿 Wildlife portfolio development</div>
+  <button class="expand" onclick="toggle('a1')">View Achievements Story</button>
+
+  <div id="a1" class="hidden">
+    Alan’s photography has been recognized in school-level platforms where his work stood out for composition and storytelling. He was selected for official school media photography responsibilities, marking his transition from hobbyist to a trusted visual storyteller. His ongoing wildlife portfolio is evolving into a strong creative identity.
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section reveal">
-  <h2>Featured Wildlife Frames</h2>
+<!-- GALLERY WITH AI CAPTIONS -->
+<section class="section">
+  <h2>Wildlife Portfolio</h2>
 
   <div class="gallery">
 
-    <img src="photos/tiger.jpg" onclick="openImg(this.src)">
-    <img src="photos/bird.jpeg" onclick="openImg(this.src)">
-    <img src="photos/elephant.jpg" onclick="openImg(this.src)">
+    <div class="img-card">
+      <img src="photos/tiger.jpg" onclick="openImg(this.src)">
+      <p>“Silent dominance of the forest king.”</p>
+    </div>
+
+    <div class="img-card">
+      <img src="photos/bird.jpeg" onclick="openImg(this.src)">
+      <p>“A fleeting moment between sky and freedom.”</p>
+    </div>
+
+    <div class="img-card">
+      <img src="photos/elephant.jpg" onclick="openImg(this.src)">
+      <p>“Wisdom walking through ancient paths.”</p>
+    </div>
 
   </div>
 </section>
@@ -90,7 +110,6 @@
   <img id="lightbox-img"/>
 </div>
 
-<!-- FOOTER -->
 <footer>
   Crafted in silence of nature • © 2026 Alan Varghese
 </footer>
@@ -105,16 +124,9 @@ function closeImg(){
   document.getElementById("lightbox").style.display = "none";
 }
 
-/* scroll reveal */
-const items = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  items.forEach(el => {
-    if(el.getBoundingClientRect().top < window.innerHeight - 80){
-      el.classList.add("active");
-    }
-  });
-});
+function toggle(id){
+  document.getElementById(id).classList.toggle("show");
+}
 </script>
 
 </body>
